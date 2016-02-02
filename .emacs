@@ -13,10 +13,12 @@
     ("2da65cb7074c176ca0a33f06bcc83ef692c9175e41b6370f5e94eb5811d6ee3a" "2ba33e8f68d7859d201a61899caed6ace8d4f09e9ca1a61bdc8dec4cc0d11301" "3190b71fa04debee96a8d00b795498a12a6f3002a4e66daaad09f65e48e519db" "b2f1d127439a017454308a94a095bde87c5d7bc24ec2288b406b7ca943e77926" "296da7c17c698e963c79b985c6822db0b627f51474c161d82853d2cb1b90afb0" "331433979cba7e5db23375e231e9216b2eb1d0b7977a3b327560b4dd6a2ef1ec" "65bd52dba65abc2ff2ac50a6564b226d9ff635a475e27b9e8036e7931c4c793d" "20ae6eb51041ea18ec9fdc1d7e46ae5291ed9b9bd5ba1da5f7ca3baeb428eccf" "6c54fdd977c52f074f6e3d01fcd5e6c09b74ef7675a23bc2a51f347fec197c9f" "b28e350844ab3e59a8793f31b72c325886cad836c67f23f8c84ad9d4a77cda42" default)))
  '(custom-theme-directory "~/.emacs.d/themes/")
  '(fci-rule-color "#383838")
+ '(font-use-system-font t)
  '(nrepl-message-colors
    (quote
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(show-paren-mode t)
+ '(speedbar-default-position (quote left))
  '(vc-annotate-background "#2B2B2B")
  '(vc-annotate-color-map
    (quote
@@ -44,8 +46,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
-(add-to-list 'load-path "~/.emacs.d/plugins/")
+ '(default ((t (:family "Droid Sans Mono" :foundry "unknown" :slant normal :weight normal :height 120 :width normal)))))
+(add-to-list 'load-path "~/.emacs.d/plugins/sr-speedbar")
 (require 'sr-speedbar)
 (global-set-key (kbd "s-s") 'sr-speedbar-toggle)
 (require 'package) ;; You might already have this line
@@ -56,3 +58,6 @@
   (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/")))
 (package-initialize) ;; You might already have this line
 
+(add-to-list 'load-path "~/.emacs.d/plugins/neotree")
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
