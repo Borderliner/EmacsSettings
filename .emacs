@@ -59,5 +59,6 @@
 (package-initialize) ;; You might already have this line
 
 (add-to-list 'load-path "~/.emacs.d/plugins/neotree")
+(add-to-list 'load-path "~/.emacs.d/plugins/emacs-goodies-el")
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
