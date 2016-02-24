@@ -829,9 +829,11 @@ The description of ARG is in `neotree-enter'."
 
 (defun neo-util--filter (condp lst)
   "Apply CONDP to elements of LST keeping those that return non-nil.
+
 Example:
     (neo-util--filter 'symbolp '(a \"b\" 3 d4))
          => (a d4)
+
 This procedure does not work when CONDP is the `null' function."
   (delq nil
         (mapcar (lambda (x) (and (funcall condp x) x)) lst)))
@@ -1273,6 +1275,7 @@ PATH is value."
 
 (defun neo-buffer--get-node-index (node nodes)
   "Return the index of NODE in NODES.
+
 NODES can be a list of directory or files.
 Return nil if NODE has not been found in NODES."
   (let ((i 0)
@@ -1623,6 +1626,7 @@ the directory instead of showing the directory contents."
 
 (defun neo-open-dir (full-path &optional arg)
   "Toggle fold a directory node.
+
 FULL-PATH is the path of the directory.
 ARG is ignored."
   (if neo-click-changes-root
@@ -1636,6 +1640,7 @@ ARG is ignored."
 
 (defun neo-open-dired (full-path &optional arg)
   "Open file or directory node in `dired-mode'.
+
 FULL-PATH is the path of node.
 ARG is same as `neo-open-file'."
   (neo-global--select-mru-window arg)
@@ -1643,6 +1648,7 @@ ARG is same as `neo-open-file'."
 
 (defun neo-open-file (full-path &optional arg)
   "Open a file node.
+
 FULL-PATH is the file path you want to open.
 If ARG is an integer then the node is opened in a window selected via
 `window-numbering' (if available) according to the passed number.
@@ -1844,8 +1850,10 @@ If the current node is the first node then the last node is selected."
 ;;;###autoload
 (defun neotree-projectile-action ()
   "Integration with `Projectile'.
+
 Usage:
     (setq projectile-switch-project-action 'neotree-projectile-action).
+
 When running `projectile-switch-project' (C-c p p), `neotree' will change root
 automatically."
   (interactive)
@@ -1921,4 +1929,3 @@ ARG are the same as `neo-open-file'."
 
 (provide 'neotree)
 ;;; neotree.el ends here
-
